@@ -6,7 +6,6 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Сумма счета -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,13 +13,12 @@
         android:textSize="16sp" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/editTextAmount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Например: 1000"
         android:inputType="numberDecimal" />
 
-    <!-- Количество блюд -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,22 +33,6 @@
         android:hint="Целое число"
         android:inputType="number" />
 
-    <!-- Дополнительные данные (оставим, но можно использовать) -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Дополнительные данные:"
-        android:textSize="16sp"
-        android:layout_marginTop="12dp" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Необязательно"
-        android:inputType="text" />
-
-    <!-- Слайдер чаевых -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -78,7 +60,6 @@
         android:textSize="12sp"
         android:textColor="@android:color/darker_gray" />
 
-    <!-- Радиокнопки для скидки (выбираются программно) -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -116,37 +97,23 @@
             android:text="Более 10 блюд – 10%" />
     </RadioGroup>
 
-    <!-- Отображение суммы скидки и итога -->
     <TextView
-        android:id="@+id/discountAmountText"
-        android:layout_width="wrap_content"
+        android:id="@+id/resultDisplayText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Скидка: 0.00"
-        android:textSize="14sp"
-        android:layout_marginTop="8dp" />
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        android:padding="8dp"
+        android:background="@android:drawable/editbox_background" />
 
-    <TextView
-        android:id="@+id/totalAfterDiscountText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Сумма после скидки: 0.00"
-        android:textSize="14sp" />
-
-    <TextView
-        android:id="@+id/finalTotalText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Итог (с чаевыми): 0.00"
-        android:textSize="14sp"
-        android:textStyle="bold" />
-
-    <!-- Кнопка для отображения всех данных -->
     <Button
-        android:id="@+id/buttonShow"
+        android:id="@+id/buttonTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Показать все данные"
-        android:layout_marginTop="20dp"
+        android:text="Итого"
+        android:layout_marginTop="8dp"
         android:layout_gravity="center" />
 
 </LinearLayout>
