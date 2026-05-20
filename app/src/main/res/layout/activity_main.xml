@@ -20,7 +20,22 @@
         android:hint="Например: 1000"
         android:inputType="numberDecimal" />
 
-    <!-- Дополнительные данные -->
+    <!-- Количество блюд -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Количество блюд:"
+        android:textSize="16sp"
+        android:layout_marginTop="12dp" />
+
+    <EditText
+        android:id="@+id/editTextDishes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Целое число"
+        android:inputType="number" />
+
+    <!-- Дополнительные данные (оставим, но можно использовать) -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,7 +50,7 @@
         android:hint="Необязательно"
         android:inputType="text" />
 
-    <!-- Слайдер -->
+    <!-- Слайдер чаевых -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -54,50 +69,78 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Процент чаевых: 0%"
-        android:textSize="14sp"
-        android:layout_marginTop="4dp" />
+        android:textSize="14sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Диапазон: 0–25%, шаг 5%"
         android:textSize="12sp"
-        android:textColor="@android:color/darker_gray"
-        android:layout_marginTop="4dp" />
+        android:textColor="@android:color/darker_gray" />
 
-    <!-- Радиокнопки -->
+    <!-- Радиокнопки для скидки (выбираются программно) -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Выберите опцию:"
+        android:text="Скидка (выбирается автоматически):"
         android:textSize="16sp"
         android:layout_marginTop="12dp" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/radioGroupDiscount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <RadioButton
-            android:id="@+id/radioOption1"
+            android:id="@+id/radioDiscount1_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Опция 1" />
+            android:text="1-2 блюда – 3%" />
 
         <RadioButton
-            android:id="@+id/radioOption2"
+            android:id="@+id/radioDiscount3_5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Опция 2" />
+            android:text="3-5 блюд – 5%" />
 
         <RadioButton
-            android:id="@+id/radioOption3"
+            android:id="@+id/radioDiscount6_10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Опция 3" />
+            android:text="6-10 блюд – 7%" />
+
+        <RadioButton
+            android:id="@+id/radioDiscountMore10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Более 10 блюд – 10%" />
     </RadioGroup>
 
-    <!-- Кнопка -->
+    <!-- Отображение суммы скидки и итога -->
+    <TextView
+        android:id="@+id/discountAmountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Скидка: 0.00"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/totalAfterDiscountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Сумма после скидки: 0.00"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/finalTotalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Итог (с чаевыми): 0.00"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <!-- Кнопка для отображения всех данных -->
     <Button
         android:id="@+id/buttonShow"
         android:layout_width="wrap_content"

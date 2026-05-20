@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">calcul</string>
+    <string name="app_name">Calcul</string>
+    <string name="tip_percent">Процент чаевых: %d%%</string>
 </resources>
